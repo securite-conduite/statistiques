@@ -214,7 +214,7 @@ function todayISO(){ return new Date().toISOString().slice(0,10); }
 function fmtDate(iso){ if(!iso) return ''; const p=iso.split('-'); return p.length===3 ? `${p[2]}/${p[1]}/${p[0]}` : iso; }
 function escapeHtml(s){ return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 function nextId(){ return data.reduce((m,r)=>Math.max(m,r.id),0)+1; }
-function pct(n,d){ return d ? Math.round((n/d)*100) : 0; }
+function pct(n,d){ return d ? Math.round((n/d)*110) : 0; }
 function avg(arr){ return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : null; }
 
 async function storageGet(key){ if(!window.storage) return null; try{ return await window.storage.get(key,false); }catch(e){ return null; } }
